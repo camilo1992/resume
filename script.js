@@ -195,7 +195,6 @@ const slider = function () {
   const img10 = document.getElementById("image10");
 
   const openTab8 = function () {
-    console.log("clicked");
     window.open("https://github.com/camilo1992");
   };
 
