@@ -515,7 +515,7 @@ const openTab6 = function() {
     window.open("https://612043795607e800077437e2--awesome-kepler-192b24.netlify.app/");
 };
 const openTab7 = function() {
-    window.open("https://620ffccd8eab8b00c9b3eb97--friendly-pasteur-a21e03.netlify.app/");
+    window.open("https://621166cb16fb8c7092ac3327--wonderful-brown-dea1b2.netlify.app/");
 };
 img1.addEventListener("click", openTab1);
 img2.addEventListener("click", openTab2);
@@ -610,7 +610,7 @@ const slider = function() {
     };
     const openTab10 = function() {
         console.log("clicked");
-        window.open("https://www.facebook.com/cristian.c.gc.5");
+        window.open("https://www.linkedin.com/in/cristian-g-12808039/");
     };
     img8.addEventListener("click", openTab8);
     img9.addEventListener("click", openTab9);

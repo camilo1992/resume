@@ -85,7 +85,7 @@ const openTab6 = function () {
 
 const openTab7 = function () {
   window.open(
-    "https://620ffccd8eab8b00c9b3eb97--friendly-pasteur-a21e03.netlify.app/"
+    "https://621166cb16fb8c7092ac3327--wonderful-brown-dea1b2.netlify.app/"
   );
 };
 
@@ -206,7 +206,7 @@ const slider = function () {
 
   const openTab10 = function () {
     console.log("clicked");
-    window.open("https://www.facebook.com/cristian.c.gc.5");
+    window.open("https://www.linkedin.com/in/cristian-g-12808039/");
   };
 
   img8.addEventListener("click", openTab8);
