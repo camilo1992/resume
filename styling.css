@@ -19,6 +19,21 @@ header {
   margin: auto;
 }
 
+/* contact */
+#top-contact {
+  opacity: 0.8;
+  display: none;
+  font-size: 18px;
+  font-weight: lighter;
+  border-radius: 20%;
+  text-align: center;
+  position: fixed;
+  margin-left: 1065px;
+  color: white;
+  float: right;
+  background-color: black;
+}
+
 /* float ----> left, changes the layout so that it remains as a block element aligned along */
 .col-3 {
   float: left;

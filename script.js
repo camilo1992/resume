@@ -19,14 +19,25 @@ menuBar.addEventListener("click", function (e) {
   document.querySelector(`${sect}`).scrollIntoView({ behavior: "smooth" });
 });
 
+// Display contact div after click
+const box = document.getElementById(`top-contact`);
+const displayContact = () => {
+  box.style.display = "grid";
+  box.style.display = "grid";
+};
+
+const contactEl = document.querySelector(`.get-started-btn`);
+contactEl.addEventListener("click", displayContact);
 //  Implementing sticky nav .................................
 const navHeight = header.getBoundingClientRect().height;
 
 const callbackObs = function (entries, observer) {
   const [entry] = entries;
 
-  if (!entry.isIntersecting === true) header.classList.add(`sticky`);
-  else {
+  if (!entry.isIntersecting === true) {
+    box.style.display = "grid";
+    header.classList.add(`sticky`);
+  } else {
     header.classList.remove(`sticky`);
   }
 };
