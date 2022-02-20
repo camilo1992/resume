@@ -4,8 +4,7 @@ const header = document.querySelector(`header`);
 // sections
 const secondSec = document.querySelector(`#second-section`);
 const topSec = document.querySelector(`#top-section-container`);
-const sec3 = document.querySelector(`.section3`);
-const sec1 = document.querySelector(`.section1`);
+
 const callTo = document.querySelector(`call-to-action`);
 const signup = document.querySelector(`signup`);
 const image1 = document.querySelector(`#pro1`);
@@ -35,7 +34,6 @@ const callbackObs = function (entries, observer) {
   const [entry] = entries;
 
   if (!entry.isIntersecting === true) {
-    box.style.display = "grid";
     header.classList.add(`sticky`);
   } else {
     header.classList.remove(`sticky`);
@@ -117,6 +115,7 @@ const revealCall = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section--hidden");
+  box.style.display = "grid";
   observer.unobserve(entry.target);
 };
 
