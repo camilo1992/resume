@@ -219,9 +219,10 @@ const slider = function () {
   });
 
   // social media links
-  const img8 = document.getElementById("image8");
-  const img9 = document.getElementById("image9");
-  const img10 = document.getElementById("image10");
+  const img8 = document.getElementById("image8").parentElement.parentElement;
+  const img9 = document.getElementById("image9").parentElement.parentElement;
+  const img10 = document.getElementById("image10").parentElement.parentElement;
+  console.log(img8);
 
   const openTab8 = function () {
     window.open("https://github.com/camilo1992");
