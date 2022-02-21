@@ -473,6 +473,7 @@ const img4 = document.getElementById(`pro4`).firstElementChild;
 const img5 = document.getElementById(`pro5`).firstElementChild;
 const img6 = document.getElementById(`pro6`).firstElementChild;
 const img7 = document.getElementById(`pro7`).firstElementChild;
+const logo = document.querySelector(`.logo`);
 //  Scroll into sections smoothly ..................................
 menuBar.addEventListener("click", function(e) {
     e.preventDefault();
@@ -486,6 +487,7 @@ menuBar.addEventListener("click", function(e) {
 const box = document.getElementById(`top-contact`);
 const displayContact = ()=>{
     box.style.display = "grid";
+    logo.style.display = "none";
 };
 const contactEl = document.querySelector(`.get-started-btn`);
 contactEl.addEventListener("click", displayContact);

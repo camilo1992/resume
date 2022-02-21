@@ -21,17 +21,17 @@ header {
 
 /* contact */
 #top-contact {
+  margin: 0;
+  padding: 0;
   opacity: 0.8;
   display: none;
-  font-size: 18px;
-  font-weight: lighter;
-  border-radius: 20%;
+  font-size: 15px;
+  /* font-weight: lighter; */
+  /* border-radius: 20%; */
   text-align: justify;
-  position: fixed;
-  margin-left: 1065px;
-  float: right;
-  background-color: black;
-  color: #5d6660;
+  float: left;
+  /* background-color: black; */
+  color: #011809;
   font-family: helvetica neue, Arial, sans-serif;
   line-height: 24px;
 }
