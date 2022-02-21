@@ -28,12 +28,14 @@ header {
   font-size: 18px;
   font-weight: lighter;
   border-radius: 20%;
-  text-align: center;
+  text-align: justify;
   position: fixed;
   margin-left: 1065px;
-  color: white;
   float: right;
   background-color: black;
+  color: #5d6660;
+  font-family: helvetica neue, Arial, sans-serif;
+  line-height: 24px;
 }
 
 /* float ----> left, changes the layout so that it remains as a block element aligned along */

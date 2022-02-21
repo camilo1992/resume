@@ -460,9 +460,19 @@ const header = document.querySelector(`header`);
 // sections
 const secondSec = document.querySelector(`#second-section`);
 const topSec = document.querySelector(`#top-section-container`);
+const sec3 = document.querySelector(`.section3`);
+const sec1 = document.querySelector(`.section1`);
 const callTo = document.querySelector(`call-to-action`);
 const signup = document.querySelector(`signup`);
 const image1 = document.querySelector(`#pro1`);
+// images
+const img1 = document.getElementById(`pro1`).firstElementChild;
+const img2 = document.getElementById(`pro2`).firstElementChild;
+const img3 = document.getElementById(`pro3`).firstElementChild;
+const img4 = document.getElementById(`pro4`).firstElementChild;
+const img5 = document.getElementById(`pro5`).firstElementChild;
+const img6 = document.getElementById(`pro6`).firstElementChild;
+const img7 = document.getElementById(`pro7`).firstElementChild;
 //  Scroll into sections smoothly ..................................
 menuBar.addEventListener("click", function(e) {
     e.preventDefault();
@@ -476,10 +486,22 @@ menuBar.addEventListener("click", function(e) {
 const box = document.getElementById(`top-contact`);
 const displayContact = ()=>{
     box.style.display = "grid";
-    box.style.display = "grid";
 };
 const contactEl = document.querySelector(`.get-started-btn`);
 contactEl.addEventListener("click", displayContact);
+const revealContact = function(entries, observer) {
+    const [entry] = entries;
+    console.log(entry);
+    if (!entry.isIntersecting) return;
+    displayContact();
+    observer.unobserve(entry.target);
+};
+const revOp3 = {
+    root: null,
+    threshold: 0.2
+};
+const secObservert2 = new IntersectionObserver(revealContact, revOp3);
+secObservert2.observe(img7);
 //  Implementing sticky nav .................................
 const navHeight = header.getBoundingClientRect().height;
 const callbackObs = function(entries, observer) {
@@ -495,13 +517,6 @@ const options = {
 const observer = new IntersectionObserver(callbackObs, options);
 observer.observe(topSec);
 //  Reacting to image events-------------------------------------------------
-const img1 = document.getElementById(`pro1`).firstElementChild;
-const img2 = document.getElementById(`pro2`).firstElementChild;
-const img3 = document.getElementById(`pro3`).firstElementChild;
-const img4 = document.getElementById(`pro4`).firstElementChild;
-const img5 = document.getElementById(`pro5`).firstElementChild;
-const img6 = document.getElementById(`pro6`).firstElementChild;
-const img7 = document.getElementById(`pro7`).firstElementChild;
 const openTab1 = function() {
     window.open("https://61d8794d803b610008dea258--inspiring-mirzakhani-0903bb.netlify.app/");
 };
@@ -537,7 +552,6 @@ const revealCall = function(entries, observer1) {
     const [entry] = entries;
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section--hidden");
-    box.style.display = "grid";
     observer1.unobserve(entry.target);
 };
 const revOp = {
