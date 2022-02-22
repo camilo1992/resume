@@ -221,5 +221,6 @@ const slider = function () {
   };
   init();
 };
+console.log("TEsting continuos deployment");
 
 slider();
