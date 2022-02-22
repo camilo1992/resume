@@ -465,15 +465,18 @@ const sec1 = document.querySelector(`.section1`);
 const callTo = document.querySelector(`call-to-action`);
 const signup = document.querySelector(`signup`);
 const image1 = document.querySelector(`#pro1`);
-// images
-const img1 = document.getElementById(`pro1`).firstElementChild;
-const img2 = document.getElementById(`pro2`).firstElementChild;
-const img3 = document.getElementById(`pro3`).firstElementChild;
-const img4 = document.getElementById(`pro4`).firstElementChild;
-const img5 = document.getElementById(`pro5`).firstElementChild;
-const img6 = document.getElementById(`pro6`).firstElementChild;
-const img7 = document.getElementById(`pro7`).firstElementChild;
 const logo = document.querySelector(`.logo`);
+const img7 = document.getElementById(`pro7`);
+//  Creatting  array images project
+const createImages = function() {
+    let imagesAll = [];
+    for(let i = 1; i < 8; i++)imagesAll.push(document.getElementById(`pro` + `${i}`));
+    return imagesAll;
+};
+const imagesAll = createImages();
+// Creatting images social
+const imagesSocial = [];
+for(let i = 8; i < 11; i++)imagesSocial.push(document.getElementById(`image${i}`).parentElement.parentElement);
 //  Scroll into sections smoothly ..................................
 menuBar.addEventListener("click", function(e) {
     e.preventDefault();
@@ -493,7 +496,6 @@ const contactEl = document.querySelector(`.get-started-btn`);
 contactEl.addEventListener("click", displayContact);
 const revealContact = function(entries, observer) {
     const [entry] = entries;
-    console.log(entry);
     if (!entry.isIntersecting) return;
     displayContact();
     observer.unobserve(entry.target);
@@ -519,35 +521,24 @@ const options = {
 const observer = new IntersectionObserver(callbackObs, options);
 observer.observe(topSec);
 //  Reacting to image events-------------------------------------------------
-const openTab1 = function() {
-    window.open("https://61d8794d803b610008dea258--inspiring-mirzakhani-0903bb.netlify.app/");
+const openeTab = function(url) {
+    console.log("clicked");
+    window.open(url);
 };
-const openTab2 = function() {
-    window.open("https://610050dcdab9e200083f6121--youthful-euler-f0d9b4.netlify.app/#5ed6604591c37cdc054bcd1f");
-};
-const openTab3 = function() {
-    window.open("https://620fb70aa496573962b17b3e--upbeat-bassi-5c439a.netlify.app");
-};
-const openTab4 = function() {
-    window.open("https://6111789277acf000085b0018--practical-mccarthy-be2f71.netlify.app/");
-};
-const openTab5 = function() {
-    window.open("https://610d7b7d1ff82000081321b4--elastic-lichterman-761ac3.netlify.app/");
-};
-const openTab6 = function() {
-    window.open("https://612043795607e800077437e2--awesome-kepler-192b24.netlify.app/");
-};
-const openTab7 = function() {
-    window.open("https://621166cb16fb8c7092ac3327--wonderful-brown-dea1b2.netlify.app/");
-};
-img1.addEventListener("click", openTab1);
-img2.addEventListener("click", openTab2);
-img3.addEventListener("click", openTab3);
-img4.addEventListener("click", openTab4);
-img5.addEventListener("click", openTab5);
-img6.addEventListener("click", openTab6);
-img7.addEventListener("click", openTab7);
-// console.log(img);
+const urls = [
+    "https://61d8794d803b610008dea258--inspiring-mirzakhani-0903bb.netlify.app/",
+    "https://610050dcdab9e200083f6121--youthful-euler-f0d9b4.netlify.app/#5ed6604591c37cdc054bcd1f",
+    "https://620fb70aa496573962b17b3e--upbeat-bassi-5c439a.netlify.app",
+    "https://6111789277acf000085b0018--practical-mccarthy-be2f71.netlify.app/",
+    "https://610d7b7d1ff82000081321b4--elastic-lichterman-761ac3.netlify.app/",
+    "https://612043795607e800077437e2--awesome-kepler-192b24.netlify.app/",
+    "https://621166cb16fb8c7092ac3327--wonderful-brown-dea1b2.netlify.app/", 
+];
+imagesAll.forEach((ele, i1)=>{
+    ele.addEventListener("click", function() {
+        window.open(urls[i1]);
+    });
+});
 //  reveal sections-------------------------------------------------
 const allSections = document.querySelectorAll(`.section`);
 const revealCall = function(entries, observer1) {
@@ -576,8 +567,8 @@ const slider = function() {
     let curSlide = 0;
     //  set up of dots .....
     const createDots = function() {
-        slides.forEach(function(_, i) {
-            dotContainer.insertAdjacentHTML("beforeend", `<button class="dots__dot" data-slide="${i}"></button>`);
+        slides.forEach(function(_, i1) {
+            dotContainer.insertAdjacentHTML("beforeend", `<button class="dots__dot" data-slide="${i1}"></button>`);
         });
     };
     // Dot shadowing
@@ -590,8 +581,8 @@ const slider = function() {
     };
     //  code functionality to change slides
     const changeSlide = function(slide) {
-        slides.forEach((s, i)=>{
-            s.style.transform = `translateX(${100 * (i - slide)}%)`;
+        slides.forEach((s, i1)=>{
+            s.style.transform = `translateX(${100 * (i1 - slide)}%)`;
         });
     };
     // code movement to left
@@ -619,25 +610,17 @@ const slider = function() {
         changeSlide(slide);
         actDotSh(slide);
     });
-    // social media links
-    const img8 = document.getElementById("image8").parentElement.parentElement;
-    const img9 = document.getElementById("image9").parentElement.parentElement;
-    const img10 = document.getElementById("image10").parentElement.parentElement;
-    console.log(img8);
-    const openTab8 = function() {
-        window.open("https://github.com/camilo1992");
-    };
-    const openTab9 = function() {
-        console.log("clicked");
-        window.open("https://www.instagram.com/camilo_1108_/");
-    };
-    const openTab10 = function() {
-        console.log("clicked");
-        window.open("https://www.linkedin.com/in/cristian-g-12808039/");
-    };
-    img8.addEventListener("click", openTab8);
-    img9.addEventListener("click", openTab9);
-    img10.addEventListener("click", openTab10);
+    // social media links ................................................
+    const surl = [
+        "https://github.com/camilo1992",
+        "https://www.instagram.com/camilo_1108_/",
+        "https://www.linkedin.com/in/cristian-g-12808039/", 
+    ];
+    imagesSocial.forEach((ele, i1)=>{
+        ele.addEventListener("click", function() {
+            window.open(surl[i1]);
+        });
+    });
     const init = function() {
         createDots();
         actDotSh(0);
